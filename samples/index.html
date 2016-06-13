@@ -1,0 +1,75 @@
+﻿
+    <div class="widget">
+        <div class="widget-heading">
+            <h3 class="widget-title">Page Template Form</h3>
+        </div>
+        <div class="widget-body">
+
+            <form id="pagesForm" name="cms.pagesForm" ng-submit="cms.addPage()" novalidate>
+
+                <!-- Page Name input -->
+                <div class="form-group">
+                    <label class="control-label" for="txtPageName">Name</label>
+                    <input id="pageName"
+                           class="form-control ng-class:{'error': cms.showNewPageErrors && !cms.pagesForm.pageName.$valid}"
+                           data-ng-model="cms.newPage.pageName"
+                           name="pageName"
+                           type="text"
+                           required>
+                    <div role="alert" class="help-inline error" style="color:red;">
+                        <span class="error" ng-show="cms.showNewPageErrors && cms.pagesForm.pageName.$error.required">Page Name is required</span>
+                    </div>
+                </div>
+
+                <!-- Page Description input -->
+                <div class="form-group">
+                    <label class="control-label" for="txtPageDescription">Description</label>
+                    <input id="pageDescription"
+                           class="form-control ng-class:{'error': cms.showNewPageErrors && !cms.pagesForm.pageDescription.$valid}"
+                           data-ng-model="cms.newPage.pageDescription"
+                           ng-maxlength="1000"
+                           name="pageDescription"
+                           type="text"
+                           required>
+                    <div role="alert" class="help-inline error" style="color:red;">
+                        <span class="error" ng-show="cms.showNewPageErrors && cms.pagesForm.pageDescription.$error.required">Description is required</span>
+                        <span class="error" ng-show="cms.showNewPageErrors && cms.pagesForm.pageDescription.$error.maxlength">Description cannot be longer than 1000 characters.</span>
+                    </div>
+                </div>
+
+                <!-- Page Template dropdown -->
+                <div class="form-group">
+                    <label class="dropdown" for="selectPageTemplate">Select Type of Page</label>
+                    <select id="pageTemplate"
+                            class="form-control ng-class:{'error': cms.showNewPageErrors && !cms.pagesForm.pageTemplate.$valid}"
+                            name="pageTemplate"
+                            style="width: 220px;"
+                            data-ng-model="cms.newPage.pageTemplate"
+                            ng-options="cms.TemplateId as cms.TemplateLabel for cms in cms.pageTemplateOptions"
+                            required>
+                        <option value="">Select Page</option>
+                    </select>
+                    <div role="alert" class="help-inline error" style="color:red;">
+                        <span class="error" ng-show="cms.showNewPageErrors && cms.pagesForm.pageTemplate.$error.required">Page selection is required.</span>
+                    </div>
+                </div>
+
+                <!-- Is Page Active checkbox -->
+                <div class="form-group">
+                    <label class="control-label" for="pageIsActive">Make Page Active?</label>
+                    <input id="pageIsActive"
+                           class="" checkbox_check"
+                           data-ng-model="cms.newPage.pageIsActive"
+                           name="pageIsActive"
+                           type="checkbox"
+                           value="1">
+                </div>
+
+                <!-- Submit + Reset buttons -->
+                <div class="text-right">
+                    <button type="submit" id="pagesSubmit" class="btn btn-outline btn-success submitBtn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--<input type="hidden" id="pagesId" value="@Model.Item" />-->

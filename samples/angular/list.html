@@ -1,0 +1,48 @@
+﻿
+    <div class="panel-heading"></div>
+    <div class="panel-body admin-body">
+        <div class="row">
+
+            <div class="widget">
+                <div class="widget-heading">
+                    <h3 class="widget-title">Pages Table</h3>
+                </div>
+                <div class="widget-body">
+
+                    <!-- Top of table / Column headers -->
+                    <table class="pagesTable stable table-bordered">
+                        <thead>
+                            <tr>
+                                <th class='col-md-1'>Id</th>
+                                <th class='col-md-3'>Name</th>
+                                <th class='col-md-4'>Description</th>
+                                <th class='col-md-1'>Template</th>
+                                <th class='col-md-1'>Is Active?</th>
+                                <th class='col-md-1'>Edit</th>
+                                <th class='col-md-1'>Delete</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                            <tr class="" data-ng-repeat="page in cms.pages track by page.id">
+
+                                <td class="tableColId"> {{page.id}} </td>
+                                <td class="tableColPageName"> {{page.pageName}}  </td>
+                                <td class="tableColPageDescription"> {{page.pageDescription}}   </td>
+                                <td class="tableColPageTemplate"> {{page.pageTemplate}}  </td>
+                                <td class="tableColPageIsActive"> {{page.pageIsActive}}  </td>
+                                <td><a ng-href="#/edit/{{page.id}}" class="editPagesById btn btn-info"> Edit </a></td>
+                                <td><button type="button" id="cmdDeletePage" class="btn btn-danger" ng-click="cms.deletePagesById(page.id)">Delete</button></td>
+
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <br />
+                    <div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
