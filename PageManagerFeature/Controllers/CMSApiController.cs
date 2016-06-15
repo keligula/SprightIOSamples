@@ -1,8 +1,8 @@
-﻿using Sabio.Web.Domain;
-using Sabio.Web.Models.Requests;
-using Sabio.Web.Models.Responses;
-using Sabio.Web.Services;
-using Sabio.Web.Services.Interfaces;
+using Spright.Web.Domain;
+using Spright.Web.Models.Requests;
+using Spright.Web.Models.Responses;
+using Spright.Web.Services;
+using Spright.Web.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace Sabio.Web.Controllers.Api
+namespace Spright.Web.Controllers.Api
 {
     [RoutePrefix("api/cms")]
     public class CMSApiController : ApiController
