@@ -78,7 +78,7 @@ namespace Spright.Web.Services
         }
 
 
-        // GET: Select Page by ID
+        // GET: Select Page by Id
         public Domain.CMSPage GetPageById(int pagesId)
         {
             Domain.CMSPage p = null;
