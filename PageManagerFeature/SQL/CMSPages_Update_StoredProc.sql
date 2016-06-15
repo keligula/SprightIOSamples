@@ -20,12 +20,12 @@ BEGIN
 
 UPDATE [dbo].[CMSPages]
 		
-SET		[PageName]=@PageName,
-		[PageDescription]=@PageDescription,
-		[PageTemplate]=@PageTemplate,
-		[PageIsActive]=@PageIsActive,
+SET		[PageName] = @PageName,
+		[PageDescription] = @PageDescription,
+		[PageTemplate] = @PageTemplate,
+		[PageIsActive] = @PageIsActive,
 		
 	
-WHERE [Id]=@Id
+WHERE [Id] = @Id
 			
 END
