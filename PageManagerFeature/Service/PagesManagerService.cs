@@ -29,7 +29,10 @@ namespace Spright.Web.Services
                    paramCollection.AddWithValue("@PageDescription", model.PageDescription);
                    paramCollection.AddWithValue("@PageTemplate", model.PageTemplate);
                    paramCollection.AddWithValue("@PageIsActive", model.PageIsActive);
-                  
+                   paramCollection.AddWithValue("@PageIsActive", model.PageIsActive);
+                   paramCollection.AddWithValue("@Slug", model.Slug);
+                   paramCollection.AddWithValue("@EntityId", model.EntityId);
+                   
                    SqlParameter p = new SqlParameter("@Id", System.Data.SqlDbType.Int);
                    p.Direction = System.Data.ParameterDirection.Output;
 
@@ -152,6 +155,7 @@ namespace Spright.Web.Services
                });
         }
 
+
         // DELETE Pages by Id
         public void DeletePagesById(int pagesId)
         {
@@ -163,9 +167,9 @@ namespace Spright.Web.Services
               }, returnParameters: delegate (SqlParameterCollection param)
                {
 
-               }
-               );
+               });
         }
+
 
     }
 
