@@ -29,9 +29,6 @@ namespace Spright.Web.Services
                    paramCollection.AddWithValue("@PageDescription", model.PageDescription);
                    paramCollection.AddWithValue("@PageTemplate", model.PageTemplate);
                    paramCollection.AddWithValue("@PageIsActive", model.PageIsActive);
-                   paramCollection.AddWithValue("@PageIsActive", model.PageIsActive);
-                   paramCollection.AddWithValue("@Slug", model.Slug);
-                   paramCollection.AddWithValue("@EntityId", model.EntityId);
                    
                    SqlParameter p = new SqlParameter("@Id", System.Data.SqlDbType.Int);
                    p.Direction = System.Data.ParameterDirection.Output;
@@ -69,6 +66,7 @@ namespace Spright.Web.Services
                    p.PageDescription = reader.GetSafeString(startingIndex++);
                    p.PageTemplate = reader.GetSafeInt32(startingIndex++);
                    p.PageIsActive = reader.GetSafeBool(startingIndex++);
+                   
                    if (returnList == null)
                    {
                        returnList = new List<Domain.CMSPage>();
@@ -104,31 +102,10 @@ namespace Spright.Web.Services
                       p.PageDescription = reader.GetSafeString(startingIndex++);
                       p.PageTemplate = reader.GetSafeInt32(startingIndex++);
                       p.PageIsActive = reader.GetSafeBool(startingIndex++);
-                      p.WebsiteId = reader.GetSafeInt32(startingIndex++);
-                      p.Slug = reader.GetSafeString(startingIndex++);
-                      p.EntityId = reader.GetSafeInt32(startingIndex++);
-                      p.attrArray = new List<CmsPageAttributes>();
-                      p.metaArray = new List<CmsPageMetaTag>();
-                  }
-                  else if (set == 1)
-                  {
-                      int startingIndex = 0;
-                      CmsPageAttributes attr = new CmsPageAttributes();
-                      attr.Id = reader.GetSafeInt32(startingIndex++);
-                      attr.Filter = reader.GetSafeString(startingIndex++);
-                      p.attrArray.Add(attr);
-                  }
-                  else if (set == 2)
-                  {
-                      int startingIndex = 0;
-                      CmsPageMetaTag meta = new CmsPageMetaTag();
-                      meta.metaKey = reader.GetSafeString(startingIndex++);
-                      meta.metaValue = reader.GetSafeString(startingIndex++);
-                      p.metaArray.Add(meta);
+                      
                   }
 
-              }
-              );
+              });
 
             return p;
         }
@@ -146,8 +123,6 @@ namespace Spright.Web.Services
                    paramCollection.AddWithValue("@PageDescription", model.PageDescription);
                    paramCollection.AddWithValue("@PageTemplate", model.PageTemplate);
                    paramCollection.AddWithValue("@PageIsActive", model.PageIsActive);
-                   paramCollection.AddWithValue("@Slug", model.Slug);
-                   paramCollection.AddWithValue("@EntityId", model.EntityId);
 
                }, returnParameters: delegate (SqlParameterCollection param)
                {
@@ -162,7 +137,7 @@ namespace Spright.Web.Services
             DataProvider.ExecuteNonQuery(GetConnection, "dbo.CMSPages_Delete"
               , inputParamMapper: delegate (SqlParameterCollection paramCollection)
               {
-                  paramCollection.AddWithValue("@ID", pagesId);
+                  paramCollection.AddWithValue("@Id", pagesId);
 
               }, returnParameters: delegate (SqlParameterCollection param)
                {
