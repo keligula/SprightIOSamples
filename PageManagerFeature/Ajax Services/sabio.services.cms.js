@@ -1,8 +1,8 @@
-﻿if (!sabio.services.cms)
-    sabio.services.cms = {}
+﻿if (!spright.services.cms)
+    spright.services.cms = {}
 
 // POST
-sabio.services.cms.addPage = function (payload, onAddPageSuccess, onAddPageError) {
+spright.services.cms.addPage = function (payload, onAddPageSuccess, onAddPageError) {
     $.ajax({
         type: 'POST',
         url: '/api/cms/pages',
@@ -13,21 +13,8 @@ sabio.services.cms.addPage = function (payload, onAddPageSuccess, onAddPageError
     });
 }
 
-// POST
-sabio.services.cms.addPageWithWebsiteId = function (payload, onAddPageSuccess, onAddPageError) {
-    $.ajax({
-        type: 'POST',
-        url: '/api/cms/websiteId',
-        data: payload,
-        dataType: 'json',
-        success: onAddPageSuccess,
-        error: onAddPageError
-    });
-}
-
-
 // PUT
-sabio.services.cms.updatePages = function (payload, pagesId, onUpdatePageSuccess, onUpdatePageError) {
+spright.services.cms.updatePages = function (payload, pagesId, onUpdatePageSuccess, onUpdatePageError) {
     $.ajax({
         type: 'PUT',
         url: '/api/cms/' + pagesId,
@@ -35,12 +22,11 @@ sabio.services.cms.updatePages = function (payload, pagesId, onUpdatePageSuccess
         dataType: 'json',
         success: onUpdatePageSuccess,
         error: onUpdatePageError
-
     });
 }
 
 // GET ALL PAGES, INDEX
-sabio.services.cms.loadJson = function (onAjaxSuccess, onAjaxError) {
+spright.services.cms.loadJson = function (onAjaxSuccess, onAjaxError) {
     $.ajax({
         type: 'GET',
         url: '/api/cms/',
@@ -50,19 +36,8 @@ sabio.services.cms.loadJson = function (onAjaxSuccess, onAjaxError) {
     });
 }
 
-// GET ALL PAGES, INDEX
-sabio.services.cms.loadWithWebsiteId = function (websiteId, onAjaxSuccess, onAjaxError) {
-    $.ajax({
-        type: 'GET',
-        url: '/api/cms/website/'+ websiteId,
-        dataType: 'json',
-        success: onAjaxSuccess,
-        error: onAjaxError
-    });
-}
-
 // GET BY PAGE ID
-sabio.services.cms.getPageById = function (pagesId, onGetPageSuccess, onGetPageError) {
+spright.services.cms.getPageById = function (pagesId, onGetPageSuccess, onGetPageError) {
     $.ajax({
         type: 'GET',
         url: '/api/cms/' + pagesId,
@@ -72,8 +47,8 @@ sabio.services.cms.getPageById = function (pagesId, onGetPageSuccess, onGetPageE
     });
 }
 
-// DELETE BY ID
-sabio.services.cms.deletePagesById = function (pagesId, onDeleteSuccess, onDeleteError) {
+// DELETE BY PAGE ID
+spright.services.cms.deletePagesById = function (pagesId, onDeleteSuccess, onDeleteError) {
         $.ajax({
             type: 'DELETE',
             url: '/api/cms/' + pagesId,
@@ -81,16 +56,3 @@ sabio.services.cms.deletePagesById = function (pagesId, onDeleteSuccess, onDelet
             error: onDeleteError
         });
     }
-
-
-sabio.services.cms.checkSlug = function (payload, onGetPageSuccess, onGetPageError) {
-    $.ajax({
-        type: 'GET',
-        url: '/api/cms/checkSlug/',
-        data: payload,
-        dataType: 'json',
-        success: onGetPageSuccess,
-        error: onGetPageError
-    });
-}
-
