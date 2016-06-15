@@ -1,2 +1,2 @@
 # SprightIOSamples
-Sample code from the Spright I/O project demonstrating the inbox messaging feature I worked on.
+Sample code from the Spright I/O project demonstrating the CMS pages manager feature I worked on.
