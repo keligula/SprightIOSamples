@@ -1,17 +1,17 @@
-﻿using Sabio.Web.Models.Requests;
+using Spright.Web.Models.Requests;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Data;
-using Sabio.Data;
-using Sabio.Web.Domain;
-using Sabio.Web.Services.Interfaces;
+using Spright.Data;
+using Spright.Web.Domain;
+using Spright.Web.Services.Interfaces;
 using System.Text.RegularExpressions;
-using Sabio.Web.Controllers.Api;
+using Spright.Web.Controllers.Api;
 
-namespace Sabio.Web.Services
+namespace Spright.Web.Services
 {
     public class PagesManagerService : BaseService, IPagesManagerService
 
