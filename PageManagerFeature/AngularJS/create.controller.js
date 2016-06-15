@@ -40,7 +40,6 @@
         function _onGetPageSuccess(response) {
             vm.notify(function () {
                 vm.newPage = response.item;
-                console.log("pages", response);
             });
         };
 
@@ -66,7 +65,6 @@
             vm.notify(function (response) {
                 vm.$alertService.success();
                 $location.path('/');
-                console.log("edit", response.item);
                 render();
             });
         };
