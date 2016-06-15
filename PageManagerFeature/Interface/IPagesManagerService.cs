@@ -1,12 +1,12 @@
-﻿using Sabio.Web.Domain;
-using Sabio.Web.Models.Requests;
+using Spright.Web.Domain;
+using Spright.Web.Models.Requests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sabio.Web.Services.Interfaces
+namespace Spright.Web.Services.Interfaces
 {
     public interface IPagesManagerService
 
