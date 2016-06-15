@@ -5,15 +5,15 @@
         .config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
 
             $routeProvider.when('/edit/:pagesId', {
-                templateUrl: '/Scripts/sabio/application/cms/templates/index.html',
+                templateUrl: '/Scripts/spright/application/cms/templates/index.html',
                 controller: 'createPageController',
                 controllerAs: 'cms'
             }).when('/create', {
-                templateUrl: '/Scripts/sabio/application/cms/templates/index.html',
+                templateUrl: '/Scripts/spright/application/cms/templates/index.html',
                 controller: 'createPageController',
                 controllerAs: 'cms'
             }).when('/', {
-                templateUrl: '/Scripts/sabio/application/cms/templates/list.html',
+                templateUrl: '/Scripts/spright/application/cms/templates/list.html',
                 controller: 'pagesListController',
                 controllerAs: 'cms'
            
