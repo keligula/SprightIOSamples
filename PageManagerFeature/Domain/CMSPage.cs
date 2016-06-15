@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Sabio.Web.Domain
+namespace Spright.Web.Domain
 {
     public class CMSPage
     {
