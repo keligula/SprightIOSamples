@@ -31,7 +31,7 @@
 
         render();
 
-        // Upon page load, check to see if there is an Id
+        // GET Ajax call - upon page load, check to see if there is an Id
         function render() {
             if (vm.pagesId && vm.pagesId.length > 0) {
                 vm.$cmsService.getPageById(vm.pagesId, _onGetPageSuccess, _onGetPageError);
@@ -55,11 +55,11 @@
 
             if (vm.pagesForm.$valid) {
 
-                // Edit mode
+                // PUT Edit mode
                 if (vm.pagesId && vm.pagesId.length > 0) {
                     vm.$cmsService.updatePages(vm.newPage, vm.pagesId, _onUpdatePageSuccess, _onUpdatePageError);
                 }
-                // Create new page mode
+                // POST Create new page mode
                 else {
                     vm.$cmsService.addPage(vm.newPage, _onAddPageSuccess, _onAddPageError);
                 }
