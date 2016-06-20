@@ -16,7 +16,7 @@ namespace Spright.Web.Services
     public class PagesManagerService : BaseService, IPagesManagerService
 
     {
-        // POST: Create new page
+        // POST Create new page
         public int Insert(CMSAddPageRequestModel model)
 
         {
@@ -46,7 +46,7 @@ namespace Spright.Web.Services
         }
 
 
-        // GET: List the Pages Index
+        // GET List the Pages Index
         public List<Domain.CMSPage> List()
         {
 
@@ -79,7 +79,7 @@ namespace Spright.Web.Services
         }
 
 
-        // GET: Select Page by Id
+        // GET Select Page by Id
         public Domain.CMSPage GetPageById(int pagesId)
         {
             Domain.CMSPage p = null;
@@ -111,7 +111,7 @@ namespace Spright.Web.Services
         }
 
 
-        // PUT: Update Pages by Id
+        // PUT Update Pages by Id
         public void Update(CMSAddPageRequestModel model, int pagesId)
 
         {
