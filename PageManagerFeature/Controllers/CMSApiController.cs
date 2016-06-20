@@ -23,7 +23,7 @@ namespace Spright.Web.Controllers.Api
             _pagesManagerService = pagesManagerService;
         }
 
-        // POST: Create Page
+        // POST Create Page
         [Route("pages"), HttpPost]
         public HttpResponseMessage CreateCMSPage(CMSAddPageRequestModel model)
         {
@@ -40,7 +40,7 @@ namespace Spright.Web.Controllers.Api
 
         }
 
-        // GET: List all Pages in Index View
+        // GET List all Pages in Index View
         [Route, HttpGet]
         public HttpResponseMessage List()
         {
@@ -53,7 +53,7 @@ namespace Spright.Web.Controllers.Api
 
         }
 
-        // GET: Page by Id
+        // GET Page by Id
         [Route("{pagesId:int}"), HttpGet]
         public HttpResponseMessage GetPageById(int pagesId)
         {
@@ -66,7 +66,7 @@ namespace Spright.Web.Controllers.Api
 
         }
 
-        // PUT: Update by pagesId
+        // PUT Update by pagesId
         [Route("{pagesId:int}"), HttpPut]
         public HttpResponseMessage UpdateCMSPages(CMSAddPageRequestModel model, int pagesId)
         {
