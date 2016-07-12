@@ -1,7 +1,7 @@
 ﻿if (!spright.services.cms)
     spright.services.cms = {}
 
-// POST
+// POST new page
 spright.services.cms.addPage = function (payload, onAddPageSuccess, onAddPageError) {
     $.ajax({
         type: 'POST',
@@ -13,7 +13,7 @@ spright.services.cms.addPage = function (payload, onAddPageSuccess, onAddPageErr
     });
 }
 
-// POST
+// POST new page with websiteId
 spright.services.cms.addPageWithWebsiteId = function (payload, onAddPageSuccess, onAddPageError) {
     $.ajax({
         type: 'POST',
@@ -26,7 +26,7 @@ spright.services.cms.addPageWithWebsiteId = function (payload, onAddPageSuccess,
 }
 
 
-// PUT
+// PUT update page
 spright.services.cms.updatePages = function (payload, pagesId, onUpdatePageSuccess, onUpdatePageError) {
     $.ajax({
         type: 'PUT',
@@ -39,7 +39,7 @@ spright.services.cms.updatePages = function (payload, pagesId, onUpdatePageSucce
     });
 }
 
-// GET ALL PAGES, INDEX
+// GET all pages via JSON, Index
 spright.services.cms.loadJson = function (onAjaxSuccess, onAjaxError) {
     $.ajax({
         type: 'GET',
@@ -50,7 +50,7 @@ spright.services.cms.loadJson = function (onAjaxSuccess, onAjaxError) {
     });
 }
 
-// GET ALL PAGES, INDEX
+// GET all pages with a websiteId
 spright.services.cms.loadWithWebsiteId = function (websiteId, onAjaxSuccess, onAjaxError) {
     $.ajax({
         type: 'GET',
@@ -61,7 +61,7 @@ spright.services.cms.loadWithWebsiteId = function (websiteId, onAjaxSuccess, onA
     });
 }
 
-// GET BY PAGE ID
+// GET by pagesId
 spright.services.cms.getPageById = function (pagesId, onGetPageSuccess, onGetPageError) {
     $.ajax({
         type: 'GET',
@@ -72,7 +72,7 @@ spright.services.cms.getPageById = function (pagesId, onGetPageSuccess, onGetPag
     });
 }
 
-// DELETE BY ID
+// DELETE by pagesId
 spright.services.cms.deletePagesById = function (pagesId, onDeleteSuccess, onDeleteError) {
         $.ajax({
             type: 'DELETE',
@@ -82,7 +82,7 @@ spright.services.cms.deletePagesById = function (pagesId, onDeleteSuccess, onDel
         });
     }
 
-
+// GET check slug
 spright.services.cms.checkSlug = function (payload, onGetPageSuccess, onGetPageError) {
     $.ajax({
         type: 'GET',
